@@ -49,3 +49,12 @@
   <br/>```mvn -Dtest=HelloWorldControllerTest test```
   <br/>or
   <br/>```mvn -Dtest=HelloWorldApplicationTests test```# springboot-java-helloworld
+
+
+
+
+## Docker
+
+docker run -itd --name springboot-java-helloworld-nandhu -p 8080:8080 springboot-java-helloworld-nandhu
+
+Check the application by opening in a browser: 👉 http://localhost:8080/hello
