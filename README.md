@@ -55,6 +55,12 @@
 
 ## Docker
 
-docker run -itd --name springboot-java-helloworld-nandhu -p 8080:8080 springboot-java-helloworld-nandhu
+Build image:
+`docker build -t springboot-java-helloworld-nandhu .  `
+
+Run springboot-java-helloworld-nandhu container
+
+`docker run -itd --name springboot-java-helloworld-nandhu -p 8080:8080 springboot-java-helloworld-nandhu`
+
 
 Check the application by opening in a browser: 👉 http://localhost:8080/hello
