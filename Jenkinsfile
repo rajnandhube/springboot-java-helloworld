@@ -6,9 +6,9 @@ pipeline {
         VAR2 = 'bar'
     }
     stages {
-        stage(build) {
-            agent {docker 'ubuntu-alpine'}
-            }
+        stage('build') {
+            // agent {docker 'ubuntu-alpine'}
+            
             steps {
                 step {
                     sh 'echo $VAR1'         // prints 'foo'
@@ -17,9 +17,10 @@ pipeline {
                 echo 'building ...1'
             }    
             }
+        } 
 
         }
-        stage (test) {
+        stage ('test') {
             environment {
                 VAR1 = 'test'
             }   
