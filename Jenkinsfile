@@ -10,28 +10,20 @@ pipeline {
             // agent {docker 'ubuntu-alpine'}
             
             steps {
-                step {
-                    sh 'echo $VAR1'         // prints 'foo'
-                }
-            step {
+                sh 'echo $VAR1'         // prints 'foo'
                 echo 'building ...1'
-            }    
             }
         } 
 
         
-        stage ('test') {
+        stage('test') {
             environment {
                 VAR1 = 'test'
             }   
             steps {
-                step {
                     sh 'echo $VAR1'         // prints 'test'
-                }
-                step {
                     echo 'testing...1'
                 }
             }
         }
     }
-}    
