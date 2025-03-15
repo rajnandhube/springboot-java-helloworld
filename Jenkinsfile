@@ -3,7 +3,7 @@ pipeline {
     agent any
     tools {
         maven 'Maven399'
-        docker '
+        // docker '
     }
     environment {
         VAR1 = 'foo'
