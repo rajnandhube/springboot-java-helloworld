@@ -10,9 +10,9 @@ pipeline {
             // agent {docker 'ubuntu-alpine'}
             
             steps {
+                echo 'building ...'                
                 sh 'echo $VAR1'         // prints 'foo'
-                echo 'building ...1'
-                mvn 'install'
+                sh 'mvn -version'
             }
         } 
 
