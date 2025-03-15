@@ -19,7 +19,7 @@ pipeline {
             }
         } 
 
-        }
+        
         stage ('test') {
             environment {
                 VAR1 = 'test'
@@ -34,3 +34,4 @@ pipeline {
             }
         }
     }
+}    
