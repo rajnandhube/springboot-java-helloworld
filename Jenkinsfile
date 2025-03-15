@@ -1,27 +1,36 @@
+
 pipeline {
-	agent any
-	stages {
-		stage (Build) {
-			steps {
-				step {
-					echo "Build is started"
-				}
-				step {
-					sh "mvn install"
-				}
-			}
-		}
-		stage (test) {
-			steps {
-				step {
-					echo "Testing"
-				}
-				step {
-					echo "testing by nandhu"
+    agent any
+    environment {
+        VAR1 = 'foo'
+        VAR2 = 'bar'
+    }
+    stages {
+        stage(build) {
+            agent {docker 'ubuntu-alpine'}
+            }
+            steps {
+                step{
+                    sh 'echo $VAR1'         // prints 'foo'
+                }
+            step {
+                echo 'building ...1'
+            }    
+            }
 
-				}
-			}
-		}
-
-	}
+        }
+        stage (test) {
+            environment {
+                VAR1 = 'test'
+            }   
+            steps {
+                step{
+                    sh 'echo $VAR1'         // prints 'test'
+                }
+                step {
+                    echo 'testing...1'
+                }
+            }
+        }
+    }
 }
