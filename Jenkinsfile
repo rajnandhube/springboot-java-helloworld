@@ -3,6 +3,7 @@ pipeline {
     agent any
     tools {
         maven 'Maven399'
+        docker '
     }
     environment {
         VAR1 = 'foo'
@@ -16,20 +17,20 @@ pipeline {
                 echo 'building ...'                
                 sh 'echo $VAR1'         // prints 'foo'
                 sh 'mvn -version'
-                sh 'pwd'
-                sh 'ls -latr'
                 sh 'mvn install'
             }
         } 
 
         
-        stage('test') {
+        stage('Build Docker Image') {
             environment {
                 VAR1 = 'test'
             }   
             steps {
+                    echo 'Docker image is building'
                     sh 'echo $VAR1'         // prints 'test'
-                    echo 'testing...1'
+                    sh 'docker -v'
+                    sh 'docker build -t springboot-java-helloworld-nandhu .'
                 }
             }
         }
