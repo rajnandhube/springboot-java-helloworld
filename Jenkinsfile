@@ -16,6 +16,8 @@ pipeline {
                 echo 'building ...'                
                 sh 'echo $VAR1'         // prints 'foo'
                 sh 'mvn -version'
+                sh 'pwd'
+                sh 'ls -latr'
             }
         } 
 
