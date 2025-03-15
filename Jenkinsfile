@@ -18,6 +18,7 @@ pipeline {
                 sh 'mvn -version'
                 sh 'pwd'
                 sh 'ls -latr'
+                mvn 'install'
             }
         } 
 
