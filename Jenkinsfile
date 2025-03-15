@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh 'echo $VAR1'         // prints 'foo'
                 echo 'building ...1'
+                mvn 'install'
             }
         } 
 
