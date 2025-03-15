@@ -1,6 +1,9 @@
 
 pipeline {
     agent any
+    tools {
+        maven 'Maven399'
+    }
     environment {
         VAR1 = 'foo'
         VAR2 = 'bar'
