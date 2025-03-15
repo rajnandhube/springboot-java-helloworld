@@ -2,8 +2,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven399'
-        docker 'docker275'
+        maven 'Maven399'  // Ensure this is configured in Jenkins Global Tool Configuration
     }
     environment {
         VAR1 = 'foo'
