@@ -9,7 +9,7 @@ pipeline {
         VAR1 = 'foo'
         VAR2 = 'bar'
 
-        DOCKER_PATH = '/Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/bin/docker'
+        DOCKER = '/Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/bin/docker'
     }
     stages {
         stage('build') {
