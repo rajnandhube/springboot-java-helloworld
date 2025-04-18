@@ -8,6 +8,8 @@ pipeline {
     environment {
         VAR1 = 'foo'
         VAR2 = 'bar'
+
+        DOCKER_PATH = '/Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/bin'
     }
     stages {
         stage('build') {
