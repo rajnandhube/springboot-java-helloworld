@@ -17,6 +17,7 @@ pipeline {
                 sh 'echo $VAR1'         // prints 'foo'
                 sh 'mvn -version'
                 sh 'mvn install'
+                sh 'java --version'
             }
         } 
 
