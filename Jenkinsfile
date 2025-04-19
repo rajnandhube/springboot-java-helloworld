@@ -32,7 +32,7 @@ pipeline {
             steps {
                     echo 'Docker image is building'
                     sh 'echo $VAR1'         // prints 'test'
-                    sh 'docker -v'
+                    sh '/usr/local/bin/docker -v'
                     sh '/usr/local/bin/docker build -t springboot-java-helloworld-nandhu .'
                 }
             }
