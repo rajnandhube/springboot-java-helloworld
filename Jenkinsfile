@@ -3,13 +3,12 @@ pipeline {
     agent any
     tools {
         maven 'Maven399'  // Ensure this is configured in Jenkins Global Tool Configuration
-        // dockerTool 'docker275'
+        dockerTool 'docker'
     }
     environment {
         VAR1 = 'foo'
         VAR2 = 'bar'
 
-        // DOCKER = '/Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/bin/docker'
     }
     stages {
         stage('build') {
@@ -25,15 +24,15 @@ pipeline {
         } 
 
         
-        stage('Build Docker Image') {
+        stage('Image') {
             environment {
                 VAR1 = 'test'
             }   
             steps {
                     echo 'Docker image is building'
                     sh 'echo $VAR1'         // prints 'test'
-                    sh '/usr/local/bin/docker -v'
-                    sh '/usr/local/bin/docker build -t springboot-java-helloworld-nandhu .'
+                    docker -v'
+                    docker build -t springboot-java-helloworld-nandhu .'
                 }
             }
         }
