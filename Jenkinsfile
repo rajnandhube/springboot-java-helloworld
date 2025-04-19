@@ -31,8 +31,8 @@ pipeline {
             steps {
                     echo 'Docker image is building'
                     sh 'echo $VAR1'         // prints 'test'
-                    docker -v'
-                    docker build -t springboot-java-helloworld-nandhu .'
+                    sh 'docker -v'
+                    sh 'docker build -t springboot-java-helloworld-nandhu .'
                 }
             }
         }
